@@ -1,0 +1,57 @@
+.page-login,
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-login {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-login h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: #101828;
+}
+
+.form-login {
+  width: 90%;
+  align-items: stretch;
+  margin: 1rem 0;
+}
+
+.form-login label {
+  color: #344054;
+  margin-bottom: 0.5rem;
+}
+
+.form-login input {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.btn-login {
+  background-color: #34cb65;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+.btn-login[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 700px) {
+  .form-login {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-login {
+    width: 30%;
+  }
+}
