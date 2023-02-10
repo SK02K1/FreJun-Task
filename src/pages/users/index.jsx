@@ -1,15 +1,16 @@
 import { useMemo, useState } from 'react';
 import { Navbar, Spinner, UsersTable, Error, Search } from 'components';
+import { useAxios, useDebounceValue } from 'hooks';
 import { searchUsersByQuery } from 'libs';
-import { useAxios } from 'hooks';
 
 export const Users = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearchQuery = useDebounceValue(searchQuery, 600);
   const { data, isPending, error } = useAxios(`https://dummyjson.com/users`);
 
   const users = useMemo(
-    () => searchUsersByQuery(data?.users, searchQuery),
-    [data, searchQuery]
+    () => searchUsersByQuery(data?.users, debouncedSearchQuery),
+    [data, debouncedSearchQuery]
   );
 
   return (
