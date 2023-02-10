@@ -14,6 +14,11 @@ export const UsersTable = ({ users }) => {
   if (!users) {
     return null;
   }
+
+  if (Array.isArray(users) && users.length === 0) {
+    return <p className='msg'>No user found!</p>;
+  }
+
   return (
     <TableContainer
       sx={{ height: 400, maxWidth: 640, mx: 'auto' }}
