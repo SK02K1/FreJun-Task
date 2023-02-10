@@ -63,10 +63,18 @@ export const UsersTable = ({ users }) => {
                     {name}
                   </Box>
                 </TableCell>
-                <TableCell sx={{ fontSize: '1rem' }}>{email}</TableCell>
-                <TableCell sx={{ fontSize: '1rem' }}>{age}</TableCell>
+                <TableCell sx={{ fontSize: '1rem', color: '#475467' }}>
+                  {email}
+                </TableCell>
+                <TableCell sx={{ fontSize: '1rem', color: '#475467' }}>
+                  {age}
+                </TableCell>
                 <TableCell
-                  sx={{ textTransform: 'capitalize', fontSize: '1rem' }}
+                  sx={{
+                    textTransform: 'capitalize',
+                    fontSize: '1rem',
+                    color: '#475467',
+                  }}
                 >
                   {gender}
                 </TableCell>
