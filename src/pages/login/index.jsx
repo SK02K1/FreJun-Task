@@ -4,6 +4,7 @@ import { defaultLoginFormData } from 'constants';
 import { withRouteNavigation } from 'libs';
 import { loginHandler } from 'libs';
 import { useAuth } from 'contexts';
+import { Error } from 'components';
 
 export const Login = withRouteNavigation(() => {
   const [formData, setFormData] = useState(defaultLoginFormData);
@@ -32,7 +33,7 @@ export const Login = withRouteNavigation(() => {
   return (
     <div className='page-login'>
       <h1>Log in</h1>
-      {error && <p className='msg-error'>{error}</p>}
+      <Error error={error} message={error} />
       <form onSubmit={formSubmitHandler} className='form-login'>
         <label htmlFor='username'>Username</label>
         <input

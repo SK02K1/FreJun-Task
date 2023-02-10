@@ -1,4 +1,4 @@
-import { Navbar, Spinner, UsersTable } from 'components';
+import { Navbar, Spinner, UsersTable, Error } from 'components';
 import { useAxios } from 'hooks';
 
 export const Users = () => {
@@ -8,8 +8,8 @@ export const Users = () => {
     <div>
       <Navbar />
       <Spinner loading={isPending} />
+      <Error error={error} message='Failed to fetch users' />
       <UsersTable users={users} />
-      {error && <p className='msg-error'>Failed to fetch users</p>}
     </div>
   );
 };
